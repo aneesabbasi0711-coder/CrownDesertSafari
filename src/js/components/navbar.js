@@ -97,12 +97,15 @@ export function mountNavbar(root = document) {
   const sentinel = $('[data-navbar-sentinel]', root);
   if (sentinel && 'IntersectionObserver' in window) {
     const shrink = new IntersectionObserver(
-      ([entry]) => header.dataset.condensed = String(!entry.isIntersecting),
+      ([entry]) => {
+        // Condensed only once the sentinel has actually scrolled past the
+        // top of the viewport — not merely "not intersecting", which is
+        // also true before the hero has even been reached.
+        const passedHero = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+        header.dataset.condensed = String(passedHero);
+      },
       { threshold: 0 }
     );
     shrink.observe(sentinel);
     cleanups.push(() => shrink.disconnect());
   }
-
-  return () => cleanups.forEach((fn) => fn());
-}
