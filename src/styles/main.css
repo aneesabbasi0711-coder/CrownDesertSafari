@@ -177,7 +177,6 @@
     background:var(--ivory);
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
-    overflow-x:clip;
     overflow-anchor:none;
   }
 
