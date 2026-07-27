@@ -1,7 +1,7 @@
 
 @layer tokens, reset, base, layout, components, utilities;
 
-@font-face {
+  @font-face {
   font-family:'Inter';
   font-style:normal;
   font-weight:400 700;               
