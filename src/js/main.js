@@ -1,18 +1,9 @@
-/**
- * Application entry point.
- *
- * Composition root: the only file that knows which components exist and how
- * they talk to each other. Components never import one another — they receive
- * callbacks. That keeps the dependency graph a tree, not a web, and means any
- * component can be deleted without editing a sibling.
- *
- * `packages.js` is the single source of business truth and is imported here
- * unmodified. No component mutates it.
- */
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
 
 import { packages, categories } from '../data/packages.js';
 import { observeReveals } from './lib/motion.js';
-
 import { mountNavbar }            from './components/navbar.js';
 import { mountHero }              from './components/hero.js';
 import { mountPackageList }       from './components/package-list.js';
