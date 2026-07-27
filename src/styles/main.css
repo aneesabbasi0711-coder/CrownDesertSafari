@@ -150,7 +150,7 @@
     scroll-behavior:auto;
     scroll-padding-top:calc(var(--header-h) + var(--s-3));
     -webkit-text-size-adjust:100%;
-    overflow-x:hidden;
+    overflow-x:clip;
     width:100%;
     max-width:100%;
   }
@@ -177,7 +177,7 @@
     background:var(--ivory);
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
-    overflow-x:hidden;
+    overflow-x:clip;
     overflow-anchor:none;
   }
 
@@ -280,8 +280,10 @@
      COMPONENT 1 — Navbar
      -------------------------------------------------------------------- */
   .navbar {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
+  width:100%;
   z-index: var(--z-header);
   background: #525150;
   border-bottom: 1px solid rgb(255 255 255 / 0.12);
