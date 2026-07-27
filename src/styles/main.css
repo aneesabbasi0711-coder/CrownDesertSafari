@@ -150,6 +150,9 @@
     scroll-behavior:smooth;
     scroll-padding-top:calc(var(--header-h) + var(--s-3));
     -webkit-text-size-adjust:100%;
+    overflow-x:hidden;
+    width:100%;
+    max-width:100%;
   }
   html.has-lock { overflow:hidden; }
 
