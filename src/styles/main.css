@@ -1,24 +1,10 @@
-/* ============================================================================
-   Crown Desert Safari — stylesheet
-   Layer order is declared once, so a component rule can never be beaten by a
-   base rule regardless of selector specificity. No !important anywhere.
-   ========================================================================== */
+
 @layer tokens, reset, base, layout, components, utilities;
 
-/* ============================================================================
-   FONTS — self-hosted, preloaded, metric-matched fallbacks
-   Replaces the two cross-origin round trips to fonts.googleapis.com and
-   fonts.gstatic.com. The -fallback faces carry metric overrides so the swap
-   from system font to webfont produces no reflow (CLS contribution ~0).
-
-   REGENERATE the override values against your actual subset:
-     npx fontpie ./fonts/inter-latin-400.woff2 -n "Inter Fallback" -f Arial
-   The values below are published starting points, not measured from your files.
-   ========================================================================== */
 @font-face {
   font-family:'Inter';
   font-style:normal;
-  font-weight:400 700;                 /* variable range: one file for 4 weights */
+  font-weight:400 700;               
   font-display:swap;
   src:url('/fonts/inter-latin-var.woff2') format('woff2-variations');
   unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,
