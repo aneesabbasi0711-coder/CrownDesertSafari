@@ -33,18 +33,20 @@ export function mountFilterBar(root, { categories, counts, onChange }) {
 
   const setActive = (id, { pushHash = true } = {}) => {
     const next = isValid(id) ? id : DEFAULT;
-
+  
     for (const chip of $$('.chip', root)) {
       const on = chip.dataset.category === next;
       chip.setAttribute('aria-pressed', String(on));
-      // Keep the active chip in view when the row is horizontally scrolled
       if (on) chip.scrollIntoView({ block: 'nearest', inline: 'nearest' });
     }
-
+  
     if (pushHash) {
-  const hash = next === DEFAULT ? '#' : `#packages?filter=${next}`;
-  history.replaceState(null, '', next === DEFAULT ? location.pathname + location.search : hash);
-  }
+      if (next === DEFAULT) {
+        history.replaceState(null, '', location.pathname + location.search);
+      } else {
+        history.replaceState(null, '', `#packages?filter=${next}`);
+      }
+    }
     onChange?.(next, categories.find((c) => c.id === next));
   };
 
