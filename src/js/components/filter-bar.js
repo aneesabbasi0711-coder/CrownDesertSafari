@@ -42,9 +42,9 @@ export function mountFilterBar(root, { categories, counts, onChange }) {
     }
 
     if (pushHash) {
-      const hash = next === DEFAULT ? '#packages' : `#packages?filter=${next}`;
-      history.replaceState(null, '', hash);
-    }
+  const hash = next === DEFAULT ? '#' : `#packages?filter=${next}`;
+  history.replaceState(null, '', next === DEFAULT ? location.pathname + location.search : hash);
+  }
     onChange?.(next, categories.find((c) => c.id === next));
   };
 
