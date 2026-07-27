@@ -1331,6 +1331,25 @@
   .hero {
     z-index: 0;
   }
+  /* Mobile menu Book Now button */
+  .navbar__panel .btn--primary {
+    background: #E3BE68;
+    color: #14100D;
+    border-color: #E3BE68;
+  }
+
+  .navbar__panel .btn--primary:hover,
+  .navbar__panel .btn--primary:focus-visible {
+    background: #D3AC55;
+    color: #14100D;
+    border-color: #D3AC55;
+  }
+
+  .navbar__panel .btn--primary:active {
+    background: #BF9847;
+    color: #14100D;
+    border-color: #BF9847;
+  }
 }
 #packages .section__head .eyebrow,
 #packages .section__head h2,
