@@ -150,7 +150,7 @@
     scroll-behavior:auto;
     scroll-padding-top:calc(var(--header-h) + var(--s-3));
     -webkit-text-size-adjust:100%;
-    overflow-x:clip;
+    overflow-x:hidden;
     width:100%;
     max-width:100%;
   }
